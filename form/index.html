@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creating Form using DOM</title>
+
+    <style>
+        body{
+            display: grid;
+            place-content: center;
+            min-height: 100vh;
+            font-family: sans-serif;
+            line-height: 30px;
+            /* color: white; */
+            background: black;
+
+        }
+        .sty{
+            border: 2px solid black;
+            width: 90%;
+            padding: 20px;
+            background-color:whitesmoke;
+            /* background: black; */
+        }
+        h1{
+            text-align: center;
+        }
+    </style>
+    <script>
+        function myFunction(){
+            var tbl = document.getElementById("myTable");
+            var row = tbl.insertRow();
+            var cell1 = row.insertCell();
+            var cell2 = row.insertCell();
+            var cell3 = row.insertCell();
+            var cell4 = row.insertCell();
+            var cell5 = row.insertCell();
+            var cell6 = row.insertCell();
+            var cell7 = row.insertCell();
+            var cell8 = row.insertCell();
+            cell1.innerHTML = document.getElementById("pfname").value;
+            cell2.innerHTML = document.getElementById("plname").value;
+            cell3.innerHTML = document.getElementById("paddress").value;
+            cell4.innerHTML = document.getElementById("ppincode").value;
+            cell5.innerHTML = document.querySelector('input[name="Gender"]:checked').value;
+            cell6.innerHTML = document.getElementById("pfood").value;
+            cell7.innerHTML = document.getElementById("pstate").value;
+            cell8.innerHTML = document.getElementById("pcountry").value;           
+        }
+    </script>
+</head>
+<body>
+    
+    <section class="sty">
+        <h1>Big pizza House</h1>
+    <form onsubmit="myFunction(); return false;" required>
+        <div class="name">
+        <label for="pfname">Enter Your First Name</label>
+        <input type="text" id="pfname" placeholder="Your First Name"/><br>
+        <label for="plname">Enter Your Last Name</label>
+        <input type="text" id="plname" placeholder="Your Last Name" required/><br>
+        <label for="paddress">Enter Your Address</label>
+        <input type="text" id="paddress" placeholder="our Address" required/><br>
+        <label for="ppincode">Enter Your Pincode</label>
+        <input type="number" id="ppincode" placeholder="Your Pincode" required/><br>
+    </div>
+        
+        <div id="pgender">
+            <h4>Gender:</h4>
+            <input type="radio" value = "Male" id="Male" name="Gender">
+            <label for="Male">Male</label>
+            <input type="radio" value = "Female"  id="Female" name="Gender">
+            <label for="Female">Female</label>
+        </div>
+        <div>
+            <h4>Choice of Food</h4>
+            <select id="pfood">
+                <option value="">-- Choice of Food --</option>
+                <option value="pizza">Pizza</option>
+                <option value="Burger">Burger</option>
+                <option value="Sanwich">Sanwich</option>
+                <option value="Pasta">Pasta</option>
+                <option value="Fries">Fries</option>
+                <option value="Wrap">Wrap</option>
+                <option value="Dessert">Dessert</option>
+            </select>
+        </div>
+        <div>
+            <h4>State</h4>
+            <select id="pstate">
+                <option value="">-- Select a State --</option>
+                <option value="tn">Tamil Nadu</option>
+                <option value="kl">Kerala</option>
+                <option value="Ap">Andra</option>
+                <option value="Ka">Karnataka</option>
+            </select>
+        </div>
+        <div>
+            <h4>Country:</h4>
+            <select id="pcountry">
+                <option value="">-- Select a Country --</option>
+                <option value="Ind">India</option>
+                <option value="US">Us</option>
+                <option value="Ca">Canada</option>
+                <option value="Uk">Uk</option>
+            </select>
+        </div>
+
+        <input type="submit" value="Add to Cart" />
+        <input type="reset" value="Clear" />
+    </form>
+    
+    <h1>My Order</h1>
+     <table border=1 id="myTable">
+         <tr>
+             <td>First Name:</td>
+             <td>Last Name:</td>
+             <td>Address:</td>
+             <td>Pincode:</td>
+             <td>Gender:</td>
+             <td>Food:</td>
+             <td>State:</td>
+             <td>Country:</td>
+
+         </tr>
+     </table>
+     </section>
+</body>
+</html>
